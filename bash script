@@ -1,0 +1,23 @@
+#!/bin/bash
+###************run as root******###
+sudo apt-get update ##update everything
+sudo apt-get install curl ##install curl for later use 
+sudo apt-get install apache2 -y ##install apache with yes
+sudo apt-get install php* -y ##install all php packages with yes
+sudo apt-get install mariadb* -y ##install mariadb with everything
+sudo systemctl start mysql ##start mysql 
+sudo systemctl enable mysql ##enable it so it boots at default
+mysql_secure_installation ##run secured install script to hard mysql
+sudo apt-get install phpmyadmin ##install phpmyadmin 
+systemctl enable apache2 ##finally enable and start apache to run/w configs
+systemctl start apache2
+cd /tmp  ##change directory
+curl -O https://wordpress.org/latest.tar.gz ##download wordpress
+tar xzvf latest.tar.gz  ##unzip wp
+touch /tmp/wordpress/.htaccess ##dummy htaccess file to prevent errors later
+cp /tmp/wordprss/wp-config-sample.php /tmp/wordpress/wp-config.php ##copy sample
+mkdir /tmp/wordpress/wp-content/upgrade ##prevent more permission problems
+cp -a /tmp/wordpress/. /var/www/html  ##finally copy installation
+echo "everything should be installed now run 127.0.0.1 and run wp install"
+echo "make sure you check out my linkedin"
+echo "linkedin.com/in/7h3gh05t"
