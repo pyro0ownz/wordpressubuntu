@@ -7,7 +7,7 @@ sudo apt-get install php* -y ##install all php packages with yes
 sudo apt-get install mariadb* -y ##install mariadb with everything
 sudo systemctl start mysql ##start mysql 
 sudo systemctl enable mysql ##enable it so it boots at default
-mysql_secure_installation ##run secured install script to hard mysql
+mysql_secure_installation ##run secured install script to harden mysql
 sudo apt-get install phpmyadmin ##install phpmyadmin 
 systemctl enable apache2 ##finally enable and start apache to run/w configs
 systemctl start apache2
